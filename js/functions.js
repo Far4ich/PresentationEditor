@@ -83,7 +83,6 @@ function addTriangle(model, pos1, pos2, pos3) { }
  * @returns {AppModel}
  */
 //#endregion 
-//#region elements
 function setLayer(model, layer) { }
 /**
  * @param {AppModel} model
@@ -194,4 +193,3 @@ function setPos2(model, pos) { }
  * @returns {AppModel}
  */
 function setPos3(model, pos) { }
-//#endregion
