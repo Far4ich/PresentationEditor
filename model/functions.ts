@@ -64,17 +64,17 @@ function deleteSlides(model: AppModel): AppModel {
  function moveSlide(model: AppModel, targetNumber: number) {
      const slides = [
          ...model.presentation.slides.slice(0, targetNumber).map(element => {
-             if (model.selection.slideIDs.find(element.ID) === undefined) {
+             if (model.selection.slideIDs.find(item => { item == element.ID }) === undefined) {
                  return element
              }
          }),
          ...model.presentation.slides.map(element => {
-             if (model.selection.slideIDs.find(element.ID) !== undefined) {
+             if (model.selection.slideIDs.find(item => { item == element.ID }) !== undefined) {
                  return element
              }
          }),
          ...model.presentation.slides.slice(targetNumber).map(element => {
-             if (model.selection.slideIDs.find(element.ID) === undefined) {
+             if (model.selection.slideIDs.find(item => { item == element.ID }) === undefined) {
                  return element
              }
          })
