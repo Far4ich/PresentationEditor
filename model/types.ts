@@ -35,7 +35,7 @@ type TextElement = {
     readonly "layer": number,
     readonly "str": string,
     readonly "font": string,
-    readonly "fontsSize": number,
+    readonly "fontSize": number,
     readonly "leftTop": Point,
     readonly "rightBottom": Point
 }
