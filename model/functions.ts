@@ -4,11 +4,14 @@ import {
     Circle, Rectangle, Triangle, Slide
 } from './types';
 
-function setTitle(pres: Presentation, title: string): Presentation {
+function setTitle(model: AppModel, title: string): AppModel {
     return {
-        ...pres,
-        title: title
-    };
+        ...model,
+        presentation: {
+            ...model.presentation,
+            title: title
+        }
+    }
 }
 function GetSlideId(selection: SelectionType): number {
     selection.lastSlideId += 1;
@@ -378,9 +381,13 @@ function setStr(model: AppModel, str: string): AppModel {
                                     str: str
                                 }
                             }
+                            else {
+                                return element
+                            }
                         })
                     }
                 }
+                return slide
             })
         }
     }
@@ -401,9 +408,13 @@ function setFont(model: AppModel, font: string): AppModel {
                                     font: font
                                 }
                             }
+                            else {
+                                return element
+                            }
                         })
                     }
                 }
+                return slide
             })
         }
     }
@@ -424,9 +435,13 @@ function setFontSize(model: AppModel, num: number): AppModel {
                                     fontSize: num
                                 }
                             }
+                            else {
+                                return element
+                            }
                         })
                     }
                 }
+                return slide
             })
         }
     }
@@ -447,9 +462,13 @@ function setTextLayer(model: AppModel, num: number): AppModel {
                                     layer: num
                                 }
                             }
+                            else {
+                                return element
+                            }
                         })
                     }
                 }
+                return slide
             })
         }
     }
@@ -471,9 +490,13 @@ function moveText(model: AppModel, leftTop, rightBottom: Point): AppModel {
                                     rightBottom: rightBottom
                                 }
                             }
+                            else {
+                                return element
+                            }
                         })
                     }
                 }
+                return slide
             })
         }
     }
@@ -494,9 +517,13 @@ function setLeftTop(model: AppModel, leftTop: Point): AppModel {
                                     leftTop: leftTop,
                                 }
                             }
+                            else {
+                                return element
+                            }
                         })
                     }
                 }
+                return slide
             })
         }
     }
@@ -517,9 +544,13 @@ function setRightBottom(model: AppModel, rightBottom: Point): AppModel {
                                     rightBottom: rightBottom
                                 }
                             }
+                            else {
+                                return element
+                            }
                         })
                     }
                 }
+                return slide
             })
         }
     }
@@ -541,6 +572,9 @@ function moveImg(model: AppModel, pos: Point): AppModel {
                                     ...element,
                                     position: pos
                                 }
+                            }
+                            else {
+                                return element
                             }
                         })
                     }
@@ -565,6 +599,9 @@ function setImgWidth(model: AppModel, width: number): AppModel {
                                     width: width
                                 }
                             }
+                            else {
+                                return element
+                            }
                         })
                     }
                 }
@@ -588,6 +625,9 @@ function setImgHeight(model: AppModel, height: number): AppModel {
                                     height: height
                                 }
                             }
+                            else {
+                                return element
+                            }
                         })
                     }
                 }
@@ -610,6 +650,9 @@ function setImgLayer(model: AppModel, layer: number): AppModel {
                                     ...element,
                                     layer: layer
                                 }
+                            }
+                            else {
+                                return element
                             }
                         })
                     }
@@ -636,6 +679,9 @@ function moveCircle(model: AppModel, pos: Point): AppModel {
                                     position: pos
                                 }
                             }
+                            else {
+                                return element
+                            }
                         })
                     }
                 }
@@ -658,6 +704,9 @@ function setRadius(model: AppModel, radius: number): AppModel {
                                     ...element,
                                     radius: radius
                                 }
+                            }
+                            else {
+                                return element
                             }
                         })
                     }
@@ -682,6 +731,9 @@ function setCircleColor(model: AppModel, color: string): AppModel {
                                     color: color
                                 }
                             }
+                            else {
+                                return element
+                            }
                         })
                     }
                 }
@@ -705,6 +757,9 @@ function setCircleBorderColor(model: AppModel, borderColor: string): AppModel {
                                     borderColor: borderColor
                                 }
                             }
+                            else {
+                                return element
+                            }
                         })
                     }
                 }
@@ -727,6 +782,9 @@ function setCircleLayer(model: AppModel, layer: number): AppModel {
                                     ...element,
                                     layer: layer
                                 }
+                            }
+                            else {
+                                return element
                             }
                         })
                     }
@@ -754,6 +812,9 @@ function moveRect(model: AppModel, leftTop, rightBottom: Point): AppModel {
                                     rightBottom: rightBottom
                                 }
                             }
+                            else {
+                                return element
+                            }
                         })
                     }
                 }
@@ -776,6 +837,9 @@ function setRectLeftTop(model: AppModel, leftTop: Point): AppModel {
                                     ...element,
                                     leftTop: leftTop
                                 }
+                            }
+                            else {
+                                return element
                             }
                         })
                     }
@@ -800,6 +864,9 @@ function setRectRightBottom(model: AppModel, rightBottom: Point): AppModel {
                                     rightBottom: rightBottom
                                 }
                             }
+                            else {
+                                return element
+                            }
                         })
                     }
                 }
@@ -822,6 +889,9 @@ function setRectColor(model: AppModel, color: string): AppModel {
                                     ...element,
                                     color: color
                                 }
+                            }
+                            else {
+                                return element
                             }
                         })
                     }
@@ -846,6 +916,9 @@ function setRectBorderColor(model: AppModel, borderColor: string): AppModel {
                                     borderColor: borderColor
                                 }
                             }
+                            else {
+                                return element
+                            }
                         })
                     }
                 }
@@ -868,6 +941,9 @@ function setRectLayer(model: AppModel, layer: number): AppModel {
                                     ...element,
                                     layer: layer
                                 }
+                            }
+                            else {
+                                return element
                             }
                         })
                     }
@@ -896,6 +972,9 @@ function moveTrian(model: AppModel, pos1, pos2, pos3: Point): AppModel {
                                     position3: pos3
                                 }
                             }
+                            else {
+                                return element
+                            }
                         })
                     }
                 }
@@ -918,6 +997,9 @@ function setTrianPos1(model: AppModel, pos: Point): AppModel {
                                     ...element,
                                     position1: pos
                                 }
+                            }
+                            else {
+                                return element
                             }
                         })
                     }
@@ -942,6 +1024,9 @@ function setTrianPos2(model: AppModel, pos: Point): AppModel {
                                     position2: pos
                                 }
                             }
+                            else {
+                                return element
+                            }
                         })
                     }
                 }
@@ -964,6 +1049,9 @@ function setTrianPos3(model: AppModel, pos: Point): AppModel {
                                     ...element,
                                     position3: pos
                                 }
+                            }
+                            else {
+                                return element
                             }
                         })
                     }
@@ -988,6 +1076,9 @@ function setTrianColor(model: AppModel, color: string): AppModel {
                                     color: color
                                 }
                             }
+                            else {
+                                return element
+                            }
                         })
                     }
                 }
@@ -1011,6 +1102,9 @@ function setTrianBorderColor(model: AppModel, borderColor: string): AppModel {
                                     borderColor: borderColor
                                 }
                             }
+                            else {
+                                return element
+                            }
                         })
                     }
                 }
@@ -1033,6 +1127,9 @@ function setTrianLayer(model: AppModel, layer: number): AppModel {
                                     ...element,
                                     layer: layer
                                 }
+                            }
+                            else {
+                                return element
                             }
                         })
                     }
