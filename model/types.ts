@@ -1,6 +1,12 @@
 type AppModel = {
     readonly presentation: Presentation,
     selection: SelectionType,
+    history: History
+}
+
+type History = {
+    current: number,
+    presStates: Array<Presentation>
 }
 
 type Presentation = {
@@ -83,7 +89,7 @@ type Triangle = {
 }
 
 export {
-    AppModel, Presentation, SelectionType,
+    AppModel, History, Presentation, SelectionType,
     BackGround, TextElement, Point, Img,
     Circle, Rectangle, Triangle, Slide
 }

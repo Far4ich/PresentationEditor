@@ -1,5 +1,5 @@
 import {
-    AppModel, Presentation, SelectionType,
+    AppModel, History, Presentation, SelectionType,
     BackGround, TextElement, Point, Img,
     Circle, Rectangle, Triangle, Slide
 } from './types';
@@ -1137,5 +1137,33 @@ function setTrianLayer(model: AppModel, layer: number): AppModel {
             })
         }
     }
+}
+//#endregion
+//#region History
+function postToHistory(model: AppModel, history: History): void {
+    model.history.presStates.push(model.presentation);
+    model.history.current += 1;
+}
+function undo(model: AppModel, history:History): AppModel {
+    if (model.history.current > 0) {
+        model.history.current -= 1
+        return {
+            ...model,
+            presentation: {
+                ...model.history.presStates[model.history.current]
+            }
+        }
+    }    
+}
+function redo(model: AppModel, history:History): AppModel {
+    if (model.history.current < model.history.presStates.length - 1) {
+        model.history.current += 1
+        return {
+            ...model,
+            presentation: {
+                ...model.history.presStates[model.history.current]
+            }
+        }
+    }    
 }
 //#endregion
