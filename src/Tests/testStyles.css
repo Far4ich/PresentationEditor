@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.header{
+    height: 30px;
+}
+.header-menu {
+    display: inline-block;
+    padding: 5px 10px;
+    text-align: center;
+    width: 80px;
+    float: left;
+    border: 2px solid #c9c9c9;
+}
+.header-title {
+    text-align: center;
+    padding: 5px 10px;
+    float: left;
+}
+.tool-bar {
+    height: 70px;
+    border: 2px solid #c9c9c9;
+}
+.import-img {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 2px solid #c9c9c9;
+    margin: 0 10px;
+}
+.fonts {
+    display: inline-block;
+    padding: 10px 5px;
+}
+.fonts-styles {
+    margin-bottom: 5px;
+}
+.fonts-styles__label_style{
+
+}
+.fonts-styles__select{
+
+}
+.arial__text{
+    font-family: Arial;
+}
+.times-new-roman__text {
+    font-family: 'Times New Roman';
+}
+.fonts-size{
+
+}
+.fonts-size__label_size{
+
+}
+.fonts-styles__select{
+
+}
